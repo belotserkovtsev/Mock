@@ -8,7 +8,13 @@
 import UIKit
 import SnapKit
 
-class LaunchViewController : UIViewController {
+protocol LaunchViewInput: AnyObject {
+    
+}
+
+final class LaunchViewController: UIViewController {
+
+    private var output: LaunchViewOutput?
 
 	private let greatingText: UILabel = {
 		let view = UILabel()
@@ -17,15 +23,32 @@ class LaunchViewController : UIViewController {
 		view.textColor = .black
 		return view
 	}()
+
+    // MARK: Lifecycle
+
+    init(
+        output: LaunchViewOutput?
+    ) {
+        self.output = output
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("Cannot init vc")
+    }
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-        view.backgroundColor = .mock.background
 		setupView()
-		
+
+        output?.viewDidLoadEvent()
 	}
-	
+
+    // MARK: Private
+
 	private func setupView() {
+        view.backgroundColor = .mock.background
 		view.addSubview(greatingText)
 		
 		greatingText.snp.makeConstraints { make in
@@ -33,4 +56,8 @@ class LaunchViewController : UIViewController {
 			make.centerY.equalToSuperview()
 		}
 	}
+}
+
+extension LaunchViewController: LaunchViewInput {
+
 }

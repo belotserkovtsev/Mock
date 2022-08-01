@@ -26,6 +26,8 @@
 		D3EAAFAA288EF16300441D07 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAAF9F288EF16300441D07 /* LaunchViewController.swift */; };
 		D3EAAFAB288EF16300441D07 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAAFA0288EF16300441D07 /* Router.swift */; };
 		D3EAAFB7288EF61700441D07 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAAFB6288EF61700441D07 /* Images.swift */; };
+		D3ED9A1428940BE400D302D3 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ED9A1328940BE400D302D3 /* UserRepository.swift */; };
+		D3ED9A1628940F4900D302D3 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ED9A1528940F4900D302D3 /* LaunchPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		D3EAAF9F288EF16300441D07 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		D3EAAFA0288EF16300441D07 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D3EAAFB6288EF61700441D07 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		D3ED9A1328940BE400D302D3 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		D3ED9A1528940F4900D302D3 /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 			children = (
 				D3EAAF90288EF16300441D07 /* Modules */,
 				D3EAAF84288EF12600441D07 /* Services */,
+				D3ED9A1228940BCE00D302D3 /* Repositories */,
 				D3EAAF56288EEF3400441D07 /* System */,
 				D3EAAF50288EEF0100441D07 /* Info.plist */,
 			);
@@ -195,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				D3EAAF9F288EF16300441D07 /* LaunchViewController.swift */,
+				D3ED9A1528940F4900D302D3 /* LaunchPresenter.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -213,6 +219,14 @@
 				D3EAAFB6288EF61700441D07 /* Images.swift */,
 			);
 			path = Generated;
+			sourceTree = "<group>";
+		};
+		D3ED9A1228940BCE00D302D3 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED9A1328940BE400D302D3 /* UserRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,11 +367,13 @@
 				D3EAAFAB288EF16300441D07 /* Router.swift in Sources */,
 				D3EAAF8D288EF12600441D07 /* NetworkService.swift in Sources */,
 				D3EAAF8B288EF12600441D07 /* InitialSetupService.swift in Sources */,
+				D3ED9A1628940F4900D302D3 /* LaunchPresenter.swift in Sources */,
 				D3EAAF8F288EF12600441D07 /* RequestType.swift in Sources */,
 				D3EAAF81288EEF3400441D07 /* UIViewController+hideKeyboardOnTap.swift in Sources */,
 				D3EAAF83288EEF3400441D07 /* AppDelegate.swift in Sources */,
 				D3EAAF7B288EEF3400441D07 /* MockError.swift in Sources */,
 				D3EAAFB7288EF61700441D07 /* Images.swift in Sources */,
+				D3ED9A1428940BE400D302D3 /* UserRepository.swift in Sources */,
 				D3EAAF7F288EEF3400441D07 /* Container+resolve.swift in Sources */,
 				D3EAAF7E288EEF3400441D07 /* String+urlEscaped.swift in Sources */,
 				D3EAAFA7288EF16300441D07 /* Assembly.swift in Sources */,

@@ -14,18 +14,18 @@ protocol RouterProtocol: AnyObject {
 
 final class Router: RouterProtocol {
 	private weak var window: UIWindow?
-
-	private let container: Container
+    
 	private let assembly: AssemblyProtocol
 
-	init(container: Container, window: UIWindow?) {
-		self.container = container
+	init(assembly: AssemblyProtocol, window: UIWindow?) {
 		self.window = window
-		self.assembly = container.resolve()
+		self.assembly = assembly
 	}
 
 	func decideWhatModuleToShowFirst() {
-		self.window?.rootViewController = LaunchViewController()
+        let vc = assembly.assembleLaunchModule(output: self)
+
+		self.window?.rootViewController = vc
 		self.window?.makeKeyAndVisible()
     }
 }

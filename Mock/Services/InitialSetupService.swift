@@ -16,11 +16,15 @@ final class InitialSetupService: InitialSetupServiceProtocol {
 		let container = Container()
 
 		container.register(AssemblyProtocol.self) { _ in
-			Assembly()
+			Assembly(container: container)
 		}.inObjectScope(.weak)
 
         container.register(NetworkServiceProtocol.self) { _ in
             NetworkService()
+        }.inObjectScope(.weak)
+
+        container.register(UserRepositoryProtocol.self) { _ in
+            UserRepository()
         }.inObjectScope(.weak)
 
 		return container
@@ -28,7 +32,8 @@ final class InitialSetupService: InitialSetupServiceProtocol {
 
 	func buildAndPresentInitialController(in window: UIWindow?) {
 		let container = buildDependencyContainer()
-		let router = Router(container: container, window: window)
+
+		let router = Router(assembly: container.resolve(), window: window)
 		router.decideWhatModuleToShowFirst()
 	}
 }
