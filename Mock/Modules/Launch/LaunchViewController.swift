@@ -9,20 +9,24 @@ import UIKit
 import SnapKit
 
 protocol LaunchViewInput: AnyObject {
-    
+
 }
 
 final class LaunchViewController: UIViewController {
 
     private var output: LaunchViewOutput?
 
-	private let greatingText: UILabel = {
-		let view = UILabel()
-		view.text = "Welcome!"
-		view.font = UIFont.boldSystemFont(ofSize: 32)
-		view.textColor = .black
-		return view
-	}()
+    private lazy var transitionButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Transition", for: .normal)
+        button.addTarget(
+            self,
+            action: #selector(handleTransitionButtonTap),
+            for: .touchUpInside
+        )
+
+        return button
+    }()
 
     // MARK: Lifecycle
 
@@ -37,25 +41,31 @@ final class LaunchViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("Cannot init vc")
     }
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		setupView()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
 
         output?.viewDidLoadEvent()
-	}
+    }
 
     // MARK: Private
 
-	private func setupView() {
+    private func setupView() {
         view.backgroundColor = .mock.background
-		view.addSubview(greatingText)
-		
-		greatingText.snp.makeConstraints { make in
-			make.centerX.equalToSuperview()
-			make.centerY.equalToSuperview()
-		}
-	}
+        view.addSubview(transitionButton)
+
+        title = "Hello world"
+        
+        transitionButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+    }
+
+    @objc private func handleTransitionButtonTap() {
+        output?.transitionButtonTapped()
+    }
 }
 
 extension LaunchViewController: LaunchViewInput {

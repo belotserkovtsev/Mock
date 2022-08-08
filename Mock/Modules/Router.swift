@@ -10,10 +10,12 @@ import Swinject
 
 protocol RouterProtocol: AnyObject {
 	func decideWhatModuleToShowFirst()
+    func customTransitionScreen()
 }
 
 final class Router: RouterProtocol {
 	private weak var window: UIWindow?
+    private let navigation = UINavigationController()
     
 	private let assembly: AssemblyProtocol
 
@@ -24,8 +26,14 @@ final class Router: RouterProtocol {
 
 	func decideWhatModuleToShowFirst() {
         let vc = assembly.assembleLaunchModule(output: self)
+		window?.rootViewController = navigation
+        window?.makeKeyAndVisible()
 
-		self.window?.rootViewController = vc
-		self.window?.makeKeyAndVisible()
+        navigation.pushViewController(vc, animated: false)
+    }
+
+    func customTransitionScreen() {
+        let vc = assembly.assembleTransitionModule()
+        navigation.present(vc, animated: true)
     }
 }

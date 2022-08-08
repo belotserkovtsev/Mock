@@ -10,6 +10,7 @@ import Swinject
 
 protocol AssemblyProtocol: AnyObject {
     func assembleLaunchModule(output: RouterProtocol) -> UIViewController
+    func assembleTransitionModule() -> UIViewController
 }
 
 final class Assembly: AssemblyProtocol {
@@ -29,5 +30,9 @@ final class Assembly: AssemblyProtocol {
         presenter.view = vc
 
         return vc
+    }
+
+    func assembleTransitionModule() -> UIViewController {
+        CustomTransitionViewController()
     }
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		603AEAA3A8370D24BBE53D5C /* Pods_Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4983F5F8EA413ADBAEAB25 /* Pods_Mock.framework */; };
+		D3955BF828A199E80074AAA3 /* CustomTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3955BF728A199E80074AAA3 /* CustomTransitionViewController.swift */; };
+		D3955BFA28A19ABA0074AAA3 /* CustomTransitionPresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3955BF928A19ABA0074AAA3 /* CustomTransitionPresentAnimator.swift */; };
+		D3955BFC28A19C250074AAA3 /* CustomTransitionDismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3955BFB28A19C250074AAA3 /* CustomTransitionDismissAnimator.swift */; };
 		D3EAAF74288EEF3400441D07 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EAAF59288EEF3400441D07 /* Colors.xcassets */; };
 		D3EAAF75288EEF3400441D07 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAAF5C288EEF3400441D07 /* Colors.swift */; };
 		D3EAAF7B288EEF3400441D07 /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAAF68288EEF3400441D07 /* MockError.swift */; };
@@ -34,6 +37,9 @@
 		3BEFA1DB9E2AC0B26C08BEEE /* Pods-Mock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mock.release.xcconfig"; path = "Target Support Files/Pods-Mock/Pods-Mock.release.xcconfig"; sourceTree = "<group>"; };
 		455CA76D236783B5270EC973 /* Pods-Mock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mock.debug.xcconfig"; path = "Target Support Files/Pods-Mock/Pods-Mock.debug.xcconfig"; sourceTree = "<group>"; };
 		BD4983F5F8EA413ADBAEAB25 /* Pods_Mock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3955BF728A199E80074AAA3 /* CustomTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionViewController.swift; sourceTree = "<group>"; };
+		D3955BF928A19ABA0074AAA3 /* CustomTransitionPresentAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionPresentAnimator.swift; sourceTree = "<group>"; };
+		D3955BFB28A19C250074AAA3 /* CustomTransitionDismissAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionDismissAnimator.swift; sourceTree = "<group>"; };
 		D3EAAF3F288EEEFF00441D07 /* Mock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EAAF50288EEF0100441D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3EAAF59288EEF3400441D07 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -85,6 +91,16 @@
 				3BEFA1DB9E2AC0B26C08BEEE /* Pods-Mock.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D3955BF628A199BC0074AAA3 /* CustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				D3955BF728A199E80074AAA3 /* CustomTransitionViewController.swift */,
+				D3955BF928A19ABA0074AAA3 /* CustomTransitionPresentAnimator.swift */,
+				D3955BFB28A19C250074AAA3 /* CustomTransitionDismissAnimator.swift */,
+			);
+			path = CustomTransition;
 			sourceTree = "<group>";
 		};
 		D3EAAF36288EEEFF00441D07 = {
@@ -191,6 +207,7 @@
 			children = (
 				D3EAAFA0288EF16300441D07 /* Router.swift */,
 				D3EAAF99288EF16300441D07 /* Assembly.swift */,
+				D3955BF628A199BC0074AAA3 /* CustomTransition */,
 				D3EAAF9E288EF16300441D07 /* Launch */,
 			);
 			path = Modules;
@@ -368,14 +385,17 @@
 				D3EAAF8D288EF12600441D07 /* NetworkService.swift in Sources */,
 				D3EAAF8B288EF12600441D07 /* InitialSetupService.swift in Sources */,
 				D3ED9A1628940F4900D302D3 /* LaunchPresenter.swift in Sources */,
+				D3955BFA28A19ABA0074AAA3 /* CustomTransitionPresentAnimator.swift in Sources */,
 				D3EAAF8F288EF12600441D07 /* RequestType.swift in Sources */,
 				D3EAAF81288EEF3400441D07 /* UIViewController+hideKeyboardOnTap.swift in Sources */,
 				D3EAAF83288EEF3400441D07 /* AppDelegate.swift in Sources */,
+				D3955BF828A199E80074AAA3 /* CustomTransitionViewController.swift in Sources */,
 				D3EAAF7B288EEF3400441D07 /* MockError.swift in Sources */,
 				D3EAAFB7288EF61700441D07 /* Images.swift in Sources */,
 				D3ED9A1428940BE400D302D3 /* UserRepository.swift in Sources */,
 				D3EAAF7F288EEF3400441D07 /* Container+resolve.swift in Sources */,
 				D3EAAF7E288EEF3400441D07 /* String+urlEscaped.swift in Sources */,
+				D3955BFC28A19C250074AAA3 /* CustomTransitionDismissAnimator.swift in Sources */,
 				D3EAAFA7288EF16300441D07 /* Assembly.swift in Sources */,
 				D3EAAF80288EEF3400441D07 /* UIViewController+traceKeyboard.swift in Sources */,
 				D3EAAFAA288EF16300441D07 /* LaunchViewController.swift in Sources */,

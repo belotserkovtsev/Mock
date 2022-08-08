@@ -9,6 +9,7 @@ import Foundation
 
 protocol LaunchViewOutput: AnyObject {
     func viewDidLoadEvent()
+    func transitionButtonTapped()
 }
 
 final class LaunchPresenter {
@@ -35,5 +36,9 @@ final class LaunchPresenter {
 extension LaunchPresenter: LaunchViewOutput {
     func viewDidLoadEvent() {
         loadData()
+    }
+
+    func transitionButtonTapped() {
+        router.customTransitionScreen()
     }
 }
