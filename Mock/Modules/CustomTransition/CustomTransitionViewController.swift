@@ -13,7 +13,7 @@ final class CustomTransitionViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Transition", for: .normal)
         button.addTarget(
-            self,
+            nil,
             action: #selector(handleTransitionButtonTap),
             for: .touchUpInside
         )
